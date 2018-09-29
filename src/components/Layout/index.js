@@ -1,7 +1,7 @@
-import React from 'react';
+import { graphql, StaticQuery } from 'gatsby';
 import PropTypes from 'prop-types';
+import React from 'react';
 import Helmet from 'react-helmet';
-import { StaticQuery, graphql } from 'gatsby';
 import { GlobalStyles } from '../GlobalStyles';
 
 const Layout = ({ children }) => (
@@ -20,7 +20,7 @@ const Layout = ({ children }) => (
         <Helmet title={data.site.siteMetadata.title}>
           <html lang="en" />
         </Helmet>
-        <div>{children}</div>
+        {children}
       </GlobalStyles>
     )}
   />
