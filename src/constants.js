@@ -13,7 +13,8 @@ export const theme = {
     heading: colors.grayDark,
     headingLight: colors.grayLight,
     paragraph: colors.grayDefault,
-    bodyColor: colors.grayLighter
+    bodyColor: colors.grayLighter,
+    borderColor: colors.grayLighter
 }
 
 export const breakpoints = {

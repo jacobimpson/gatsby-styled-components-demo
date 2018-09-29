@@ -20,10 +20,19 @@ export const Body = styled.main`
 
 export const ProductContainer = styled.article`
   background: #fff;
-  padding: 2rem;
 
-  @media (min-width: calc(${breakpoints.md}px + 2rem)) {
+  @media (min-width: calc(${breakpoints.md}px)) {
     max-width: ${breakpoints.md}px;
+    display: flex;
+
+    .column {
+      &--left {}
+      &--right {
+        padding: 2rem;
+        flex-shrink: 0;
+        border-left: 1px solid ${theme.borderColor};
+      }
+    }
   }
 `;
 

@@ -1,12 +1,13 @@
 import { withPrefix } from 'gatsby';
 import React, { Component } from 'react';
+import MediaQuery from 'react-responsive';
 import { Tab, TabList, TabPanel } from 'react-tabs';
 import Button from '../components/Button';
 import ColorSelect from '../components/ColorSelect';
 import { Body, Layout, ProductContainer } from '../components/Layout';
 import Price, { PriceWrapper } from '../components/Price';
 import ProductTabs from '../components/ProductTabs';
-import { product } from '../constants';
+import { breakpoints, product } from '../constants';
 
 class IndexPage extends Component {
   constructor(props) {
@@ -19,58 +20,65 @@ class IndexPage extends Component {
 
   render() {
     const { title, subtitle, tabs, price, colors } = product;
+    const { selectedColor } = this.state;
+    const activeImageSrc = withPrefix(selectedColor.image);
+    const activeImageAlt = `${product.title} ${
+      selectedColor.label
+    } Color Variation`;
 
     return (
       <Layout>
         <Body>
           <ProductContainer>
-            <h1>{title}</h1>
-            {subtitle && <h2>{subtitle}</h2>}
-
-            {tabs.length && (
-              <ProductTabs
-                selectedIndex={this.state.tabIndex}
-                onSelect={tabIndex => this.setState({ tabIndex })}
-              >
-                <TabList>
+            <div className="column column--left">
+              <h1>{title}</h1>
+              {subtitle && <h2>{subtitle}</h2>}
+              {tabs.length && (
+                <ProductTabs
+                  selectedIndex={this.state.tabIndex}
+                  onSelect={tabIndex => this.setState({ tabIndex })}
+                >
+                  <TabList>
+                    {tabs.map(tab => (
+                      <Tab key={`tab-${tab.title}`}>{tab.title}</Tab>
+                    ))}
+                  </TabList>
                   {tabs.map(tab => (
-                    <Tab key={`tab-${tab.title}`}>{tab.title}</Tab>
+                    <TabPanel key={`tab-panel-${tab.title}`}>
+                      <p>{tab.content}</p>
+                    </TabPanel>
                   ))}
-                </TabList>
-                {tabs.map(tab => (
-                  <TabPanel key={`tab-panel-${tab.title}`}>
-                    <p>{tab.content}</p>
-                  </TabPanel>
-                ))}
-              </ProductTabs>
-            )}
-
-            <PriceWrapper>
-              {price.sale && price.sale < price.regular ? (
-                <>
-                  <Price value={price.sale} />
-                  <Price value={price.regular} strike />
-                </>
-              ) : (
-                <Price value={price.regular} />
+                </ProductTabs>
               )}
-            </PriceWrapper>
+              <PriceWrapper>
+                {price.sale && price.sale < price.regular ? (
+                  <>
+                    <Price value={price.sale} />
+                    <Price value={price.regular} strike />
+                  </>
+                ) : (
+                  <Price value={price.regular} />
+                )}
+              </PriceWrapper>
+              <ColorSelect
+                options={colors}
+                defaultValue={colors[0]}
+                value={this.state.selectedColor}
+                onChange={selectedColor => this.setState({ selectedColor })}
+              />
 
-            <ColorSelect
-              options={colors}
-              defaultValue={colors[0]}
-              value={this.state.selectedColor}
-              onChange={selectedColor => this.setState({ selectedColor })}
-            />
+              <MediaQuery maxWidth={`${breakpoints.md - 1}px`}>
+                <img src={activeImageSrc} alt={activeImageAlt} />
+              </MediaQuery>
 
-            <img
-              src={withPrefix(this.state.selectedColor.image)}
-              alt={`Photograph of ${product.title} ${
-                this.state.selectedColor.label
-              } color variation`}
-            />
+              <Button onClick={() => {}}>Add To Cart</Button>
+            </div>
 
-            <Button onClick={() => console.log('')}>Add To Cart</Button>
+            <MediaQuery minWidth={`${breakpoints.md}px`}>
+              <div className="column column--right">
+                <img src={activeImageSrc} alt={activeImageAlt} />
+              </div>
+            </MediaQuery>
           </ProductContainer>
         </Body>
       </Layout>

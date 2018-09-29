@@ -1,6 +1,6 @@
 import { Tabs } from 'react-tabs';
 import styled from 'styled-components';
-import { colors, fontSizes, theme } from '../../constants';
+import { fontSizes, theme } from '../../constants';
 
 export default styled(Tabs)`
   .react-tabs {
@@ -9,7 +9,7 @@ export default styled(Tabs)`
       padding: 0;
       display: flex;
       list-style-type: none;
-      border-bottom: 1px solid ${colors.grayLighter};
+      border-bottom: 1px solid ${theme.borderColor};
     }
 
     &__tab {
