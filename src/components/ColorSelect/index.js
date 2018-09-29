@@ -1,7 +1,16 @@
 import React from 'react';
 import Select from 'react-select';
 import styled from 'styled-components';
-import { fontSizes } from '../../constants';
+import { fontSizes, breakpoints } from '../../constants';
+
+const ColorSelectWrapper = styled.div`
+  padding: 3rem 0 1rem 2rem;
+  width: 12rem;
+
+  @media (min-width: ${breakpoints.md}px) {
+    padding: 3rem 0 1rem 3rem;
+  }
+`;
 
 const Label = styled.label`
   text-transform: uppercase;
@@ -18,15 +27,17 @@ const Label = styled.label`
 
 export default ({ options, value, onChange, defaultValue }) => {
   return (
-    <Label htmlFor="color-select">
-      <span> Colors </span>
-      <Select
-        id="color-select"
-        defaultValue={defaultValue}
-        value={value}
-        onChange={onChange}
-        options={options}
-      />
-    </Label>
+    <ColorSelectWrapper>
+      <Label htmlFor="color-select">
+        <span> Colors </span>
+        <Select
+          id="color-select"
+          defaultValue={defaultValue}
+          value={value}
+          onChange={onChange}
+          options={options}
+        />
+      </Label>
+    </ColorSelectWrapper>
   );
 };

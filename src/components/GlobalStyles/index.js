@@ -7,6 +7,7 @@ export default styled.div`
     margin: 0;
     color: ${theme.heading};
     font-size: ${fontSizes.xl}rem;
+    margin-bottom: 0.5rem;
   }
 
   h2 {
@@ -24,5 +25,6 @@ export default styled.div`
   p {
     color: ${theme.paragraph};
     font-size: ${fontSizes.md}rem;
+    line-height: 1.5;
   }
 `;

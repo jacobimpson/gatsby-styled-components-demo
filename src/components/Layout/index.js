@@ -24,10 +24,36 @@ export const ProductContainer = styled.article`
   @media (min-width: calc(${breakpoints.md}px)) {
     max-width: ${breakpoints.md}px;
     display: flex;
+  }
 
-    .column {
-      &--left {}
-      &--right {
+  .back {
+    padding: 2rem 2rem;
+
+    @media (min-width: ${breakpoints.md}px) {
+      padding: 2rem 3rem;
+    }
+  }
+
+  .title-wrapper {
+    padding: 0 2rem;
+
+    @media (min-width: ${breakpoints.md}px) {
+      padding: 1rem 3rem;
+    }
+  }
+
+  .add-to-cart {
+    border-top: 1px solid ${theme.borderColor};
+    padding: 2rem 2rem;
+
+    @media (min-width: ${breakpoints.md}px) {
+      padding: 2rem 3rem;
+    }
+  }
+
+  .column {
+    &--right {
+      @media (min-width: ${breakpoints.md}px) {
         padding: 2rem;
         flex-shrink: 0;
         border-left: 1px solid ${theme.borderColor};

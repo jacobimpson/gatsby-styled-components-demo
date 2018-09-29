@@ -13,8 +13,11 @@ class IndexPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      tabIndex: 0,
+      addingToCart: false,
+      addedToCart: false,
+      buttonText: 'Add to cart',
       selectedColor: product.colors[0],
+      tabIndex: 0,
     };
   }
 
@@ -31,8 +34,13 @@ class IndexPage extends Component {
         <Body>
           <ProductContainer>
             <div className="column column--left">
-              <h1>{title}</h1>
-              {subtitle && <h2>{subtitle}</h2>}
+              <div className="back">
+                <a href="/">All Products</a>
+              </div>
+              <div className="title-wrapper">
+                <h1>{title}</h1>
+                {subtitle && <h2>{subtitle}</h2>}
+              </div>
               {tabs.length && (
                 <ProductTabs
                   selectedIndex={this.state.tabIndex}
@@ -66,14 +74,39 @@ class IndexPage extends Component {
                 value={this.state.selectedColor}
                 onChange={selectedColor => this.setState({ selectedColor })}
               />
-
               <MediaQuery maxWidth={`${breakpoints.md - 1}px`}>
                 <img src={activeImageSrc} alt={activeImageAlt} />
               </MediaQuery>
+              <div className="add-to-cart">
+                <Button
+                  onClick={() => {
+                    if (this.state.addedToCart) {
+                      alert(
+                        `This is when we would open your cart, nice ${
+                          this.state.selectedColor.value
+                        } headphones! 🎧`
+                      );
+                      return;
+                    }
 
-              <Button onClick={() => {}}>Add To Cart</Button>
+                    this.setState({ addingToCart: true });
+                    setTimeout(
+                      () =>
+                        this.setState({
+                          buttonText: 'View Cart',
+                          addingToCart: false,
+                          addedToCart: true,
+                        }),
+                      2000
+                    );
+                  }}
+                >
+                  {this.state.addingToCart
+                    ? 'Loading...'
+                    : this.state.buttonText}
+                </Button>
+              </div>
             </div>
-
             <MediaQuery minWidth={`${breakpoints.md}px`}>
               <div className="column column--right">
                 <img src={activeImageSrc} alt={activeImageAlt} />

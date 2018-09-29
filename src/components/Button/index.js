@@ -10,6 +10,7 @@ const Button = styled.button`
   cursor: pointer;
   font-size: ${fontSizes.xxs}rem;
   font-weight: 500;
+  min-width: 15rem;
   padding: 1rem 2rem;
   text-transform: uppercase;
 `;

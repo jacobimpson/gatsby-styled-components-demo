@@ -27,10 +27,10 @@ export const breakpoints = {
 export const fontSizes = {
     xxs: 0.9,
     xs: 1.0,
-    sm: 1.1,
-    md: 1.2,
+    sm: 1.0,
+    md: 1.0,
     lg: 2.2,
-    xl: 2.6,
+    xl: 2.2,
 };
 
 export const product = {
