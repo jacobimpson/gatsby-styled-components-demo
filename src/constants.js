@@ -24,24 +24,10 @@ export const breakpoints = {
 }
 
 export const fontSizes = {
-    xs: {
-        mobile: 1,
-        desktop: 1,
-    },
-    sm: {
-        mobile: 1.1,
-        desktop: 1.1,
-    },
-    md: {
-        mobile: 1.2,
-        desktop: 1.2,
-    },
-    lg: {
-        mobile: 2.2,
-        desktop: 2.2,
-    },
-    xl: {
-        mobile: 2.6,
-        desktop: 2.6,
-    },
+    xxs: 0.9,
+    xs: 1.0,
+    sm: 1.1,
+    md: 1.2,
+    lg: 2.2,
+    xl: 2.6,
 };
