@@ -1,4 +1,4 @@
-import Tabs from 'react-tabs';
+import { Tabs } from 'react-tabs';
 import styled from 'styled-components';
 import { colors, fontSizes, theme } from '../../constants';
 

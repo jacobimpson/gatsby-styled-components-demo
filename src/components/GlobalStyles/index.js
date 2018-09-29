@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import './style.css';
 import {
   fontSizes,
   theme
 } from '../../constants';
+import './style.css';
 
-export const GlobalStyles = styled.div `
+export default styled.div `
   h1 {
     margin: 0;
     color: ${theme.heading};

@@ -1,25 +1,9 @@
 import React, { Component } from 'react';
 import { Tab, TabList, TabPanel } from 'react-tabs';
-import styled from 'styled-components';
-import Layout from '../components/Layout';
-import { breakpoints, theme } from '../constants';
-
-const Body = styled.main`
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  background: ${theme.bodyColor};
-
-  @media (min-width: ${breakpoints.sm}px) {
-    align-items: center;
-    padding: 2rem;
-  }
-`;
-
-const ProductContainer = styled.article`
-  background: #fff;
-  padding: 2rem;
-`;
+import { Layout, Body, ProductContainer } from '../components/Layout';
+import Price, { PriceWrapper } from '../components/Price';
+import StyledTabs from '../components/StyledTabs';
+import { product } from '../constants';
 
 class IndexPage extends Component {
   constructor(props) {
@@ -28,38 +12,41 @@ class IndexPage extends Component {
   }
 
   render() {
+    const { title, subtitle, tabs, price } = product;
+
     return (
       <Layout>
         <Body>
           <ProductContainer>
-            <h1>Audio-Technica ATH-MDR7</h1>
-            <h2>2017 Best Headphones of the Year Award Winner</h2>
-
-            <StyledTabs
-              selectedIndex={this.state.tabIndex}
-              onSelect={tabIndex => this.setState({ tabIndex })}
-            >
-              <TabList>
-                <Tab>Description</Tab>
-                <Tab>Details</Tab>
-              </TabList>
-              <TabPanel>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Explicabo ex voluptatum adipisci dicta, libero laborum
-                  quisquam error. Saepe iste officia tempora distinctio, atque,
-                  suscipit mollitia ab perferendis debitis blanditiis quas.
-                </p>
-              </TabPanel>
-              <TabPanel>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
-                  autem ea beatae, libero perspiciatis, aperiam fuga ratione
-                  inventore nemo nam maxime explicabo, minima impedit sit
-                  laudantium voluptatem reiciendis accusamus dolores!
-                </p>
-              </TabPanel>
-            </StyledTabs>
+            <h1>{title}</h1>
+            {subtitle && <h2>{subtitle}</h2>}
+            {tabs.length && (
+              <StyledTabs
+                selectedIndex={this.state.tabIndex}
+                onSelect={tabIndex => this.setState({ tabIndex })}
+              >
+                <TabList>
+                  {tabs.map(tab => (
+                    <Tab key={`tab-${tab.title}`}>{tab.title}</Tab>
+                  ))}
+                </TabList>
+                {tabs.map(tab => (
+                  <TabPanel key={`tab-panel-${tab.title}`}>
+                    <p>{tab.content}</p>
+                  </TabPanel>
+                ))}
+              </StyledTabs>
+            )}
+            <PriceWrapper>
+              {price.sale && price.sale < price.regular ? (
+                <>
+                  <Price value={price.sale} />
+                  <Price value={price.regular} strike />
+                </>
+              ) : (
+                <Price value={price.regular} />
+              )}
+            </PriceWrapper>
           </ProductContainer>
         </Body>
       </Layout>

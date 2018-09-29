@@ -31,3 +31,21 @@ export const fontSizes = {
     lg: 2.2,
     xl: 2.6,
 };
+
+export const product = {
+    title: 'Audio-Technica ATH-MDR7',
+    subtitle: '2017 Best Headphones of the Year Award Winner',
+    price: {
+        regular: 89.99,
+        sale: 59.99,
+    },
+    tabs: [{
+            title: 'Description',
+            content: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo ex voluptatum adipisci dicta, libero laborum quisquam error. Saepe iste officia tempora distinctio, atque, suscipit mollitia ab perferendis debitis blanditiis quas.`,
+        },
+        {
+            title: 'Details',
+            content: `Vero autem ea beatae, libero perspiciatis, aperiam fuga ratione inventore nemo nam maxime explicabo, minima impedit sit laudantium voluptatem reiciendis accusamus dolores!`,
+        },
+    ],
+}
