@@ -1,11 +1,8 @@
 import styled from 'styled-components';
-import {
-  fontSizes,
-  theme
-} from '../../constants';
+import { fontSizes, theme } from '../../constants';
 import './style.css';
 
-export default styled.div `
+export default styled.div`
   h1 {
     margin: 0;
     color: ${theme.heading};

@@ -21,6 +21,10 @@ export const Body = styled.main`
 export const ProductContainer = styled.article`
   background: #fff;
   padding: 2rem;
+
+  @media (min-width: calc(${breakpoints.md}px + 2rem)) {
+    max-width: ${breakpoints.md}px;
+  }
 `;
 
 export const Layout = ({ children }) => (
@@ -38,8 +42,8 @@ export const Layout = ({ children }) => (
       <GlobalStyles>
         <Helmet title={data.site.siteMetadata.title}>
           <html lang="en" />
-        </Helmet>{' '}
-        {children}{' '}
+        </Helmet>
+        {children}
       </GlobalStyles>
     )}
   />
