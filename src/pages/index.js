@@ -1,15 +1,16 @@
-import React from 'react'
-import { Link } from 'gatsby'
-
-import Layout from '../components/layout'
+import React from 'react';
+import Layout from '../components/Layout';
 
 const IndexPage = () => (
   <Layout>
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <Link to="/page-2/">Go to page 2</Link>
+    <h1>Audio-Technica ATH-MDR7</h1>
+    <h2>2017 Best Headphones of the Year Award Winner</h2>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea quas nam
+      pariatur saepe veniam totam ex! Id, suscipit delectus, facere sapiente
+      fugiat hic cum incidunt quos labore quam quas consequatur.
+    </p>
   </Layout>
-)
+);
 
-export default IndexPage
+export default IndexPage;
