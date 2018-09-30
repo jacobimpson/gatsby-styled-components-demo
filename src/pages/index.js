@@ -5,8 +5,8 @@ import { Tab, TabList, TabPanel } from 'react-tabs';
 import BackButton from '../components/BackButton';
 import Button from '../components/Button';
 import ColorSelect from '../components/ColorSelect';
-import { Layout } from '../components/Layout';
-import { ProductBody, ProductContainer } from '../components/Layout/Product';
+import { Layout } from '../containers/_Layout';
+import { ProductBody, ProductContainer } from '../containers/Product';
 import Price, { PriceWrapper } from '../components/Price';
 import ProductTabs from '../components/ProductTabs';
 import { breakpoints, product } from '../constants';
@@ -19,6 +19,7 @@ import {
 class IndexPage extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       addingToCart: false,
       addedToCart: false,
@@ -43,7 +44,7 @@ class IndexPage extends Component {
               addingToCart: false,
               addedToCart: true,
             },
-            () => NotificationManager.success('Added to cart')
+            () => NotificationManager.success('Item added to cart!')
           ),
         2000
       );

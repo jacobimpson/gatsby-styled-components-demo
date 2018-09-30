@@ -2,7 +2,7 @@ import { graphql, StaticQuery } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Helmet from 'react-helmet';
-import GlobalStyles from '../GlobalStyles';
+import GlobalStyles from '../components/GlobalStyles';
 
 export const Layout = ({ children }) => (
   <StaticQuery

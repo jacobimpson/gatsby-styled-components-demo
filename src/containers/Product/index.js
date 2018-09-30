@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { breakpoints, theme } from '../../../constants';
+import { breakpoints, theme } from '../../constants';
 
 export const ProductBody = styled.main`
   display: flex;
