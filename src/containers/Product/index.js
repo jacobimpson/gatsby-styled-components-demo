@@ -63,6 +63,7 @@ export const ProductContainer = styled.article`
       margin: 0 auto;
       display: block;
       padding: 0 2rem 2rem 2rem;
+      width: 60%;
     }
 
     &__price-wrapper {

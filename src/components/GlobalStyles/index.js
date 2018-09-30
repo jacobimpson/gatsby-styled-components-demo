@@ -14,7 +14,7 @@ export default styled.div`
     margin-bottom: 0.65rem;
     letter-spacing: 0.7px;
     font-weight: 600;
-    font-size: ${fontSizes.lg}rem;
+    font-size: ${fontSizes.xl * 0.9}rem;
 
     @media (min-width: ${breakpoints.desktop}px) {
       font-size: ${fontSizes.xl}rem;

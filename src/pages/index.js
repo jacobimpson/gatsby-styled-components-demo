@@ -5,7 +5,7 @@ import { Tab, TabList, TabPanel } from 'react-tabs';
 import BackButton from '../components/BackButton';
 import Button from '../components/Button';
 import ColorSelect from '../components/ColorSelect';
-import { Layout } from '../containers/_Layout';
+import { Layout } from '../containers/Layout';
 import { ProductBody, ProductContainer } from '../containers/Product';
 import Price, { PriceWrapper } from '../components/Price';
 import ProductTabs from '../components/ProductTabs';
