@@ -10,6 +10,11 @@ import { ProductBody, ProductContainer } from '../components/Layout/Product';
 import Price, { PriceWrapper } from '../components/Price';
 import ProductTabs from '../components/ProductTabs';
 import { breakpoints, product } from '../constants';
+import 'react-notifications/lib/notifications.css';
+import {
+  NotificationContainer,
+  NotificationManager,
+} from 'react-notifications';
 
 class IndexPage extends Component {
   constructor(props) {
@@ -86,22 +91,21 @@ class IndexPage extends Component {
                   isLoading={this.state.addingToCart}
                   onClick={() => {
                     if (this.state.addedToCart) {
-                      alert(
-                        `This is when we would open your cart, nice ${
-                          this.state.selectedColor.value
-                        } headphones! 🎧`
-                      );
+                      NotificationManager.info('No cart in this demo, sorry!');
                       return;
                     }
 
                     this.setState({ addingToCart: true });
                     setTimeout(
                       () =>
-                        this.setState({
-                          buttonText: 'View Cart',
-                          addingToCart: false,
-                          addedToCart: true,
-                        }),
+                        this.setState(
+                          {
+                            buttonText: 'View Cart',
+                            addingToCart: false,
+                            addedToCart: true,
+                          },
+                          () => NotificationManager.success('Added to cart')
+                        ),
                       2000
                     );
                   }}
@@ -117,6 +121,7 @@ class IndexPage extends Component {
             </MediaQuery>
           </ProductContainer>
         </ProductBody>
+        <NotificationContainer />
       </Layout>
     );
   }
