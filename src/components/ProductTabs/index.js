@@ -5,7 +5,6 @@ import { fontSizes, theme, colors } from '../../constants';
 export default styled(Tabs)`
   .react-tabs {
     &__tab-list {
-      margin: 1rem 0 1rem 0;
       display: flex;
       list-style-type: none;
       border-bottom: 1px solid ${theme.borderColor};
@@ -17,7 +16,7 @@ export default styled(Tabs)`
       font-size: ${fontSizes.xxs}rem;
       font-weight: 600;
       margin: 0 2rem 0 0;
-      padding: 1rem 0.875rem 0.7rem;
+      padding: 1rem 0.55rem 0.7rem;
       text-transform: uppercase;
       transition: color ${theme.transitionDefault};
       border-bottom: 0.2rem solid transparent;

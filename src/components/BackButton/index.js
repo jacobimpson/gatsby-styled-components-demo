@@ -4,7 +4,7 @@ import { colors, fontSizes, theme } from '../../constants';
 
 const BackButton = styled.a`
   color: ${colors.grayDefault};
-  font-size: ${fontSizes.xs}rem;
+  font-size: ${fontSizes.xxs}rem;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -28,7 +28,7 @@ const BackButton = styled.a`
 
   .label {
     font-weight:: 400;
-    padding-left: 0.6rem;
+    padding-left: 0.65rem;
   }
 `;
 

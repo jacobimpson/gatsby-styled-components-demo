@@ -25,20 +25,20 @@ export const breakpoints = {
     xs: 480,
     sm: 768,
     md: 1024,
-    lg: 1100,
+    lg: 1256,
 }
 
 export const fontSizes = {
-    xxs: 0.8,
+    xxs: 0.75,
     xs: 0.875,
     sm: 0.9,
-    md: 0.95,
-    lg: 2.1,
-    xl: 2.25,
+    md: 0.93,
+    lg: 1.69,
+    xl: 1.91,
 };
 
 export const product = {
-    title: 'Audio-Technica ATH-MDR7',
+    title: 'Audio-Technica ATH-MSR7',
     subtitle: '2017 Best Headphones of the Year Award Winner',
     price: {
         regular: 89.99,

@@ -1,10 +1,7 @@
 import styled from 'styled-components';
-import {
-  breakpoints,
-  theme
-} from '../../../constants';
+import { breakpoints, theme } from '../../../constants';
 
-export const ProductBody = styled.main `
+export const ProductBody = styled.main`
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -16,11 +13,13 @@ export const ProductBody = styled.main `
   }
 `;
 
-export const ProductContainer = styled.article `
+export const ProductContainer = styled.article`
   background: #fff;
+  width: ${breakpoints.lg}px;
+  max-width: 100%;
+  height: 770px;
 
   @media (min-width: calc(${breakpoints.md}px)) {
-    max-width: ${breakpoints.lg}px;
     display: flex;
   }
 
@@ -29,7 +28,8 @@ export const ProductContainer = styled.article `
       padding: 2rem 2rem;
 
       @media (min-width: ${breakpoints.md}px) {
-        padding: 2rem 3rem;
+        padding: 2rem 4.5rem 2.3rem;
+        margin-left: -0.2rem;
       }
     }
 
@@ -37,7 +37,7 @@ export const ProductContainer = styled.article `
       padding: 0 2rem;
 
       @media (min-width: ${breakpoints.md}px) {
-        padding: 1rem 3rem;
+        padding: 1rem 4.5rem;
       }
     }
 
@@ -46,7 +46,7 @@ export const ProductContainer = styled.article `
       padding: 2rem 2rem;
 
       @media (min-width: ${breakpoints.md}px) {
-        padding: 2rem 3rem;
+        padding: 2.35rem 4.5rem;
       }
     }
 
@@ -54,7 +54,7 @@ export const ProductContainer = styled.article `
       padding: 3rem 0 1rem 2rem;
 
       @media (min-width: ${breakpoints.md}px) {
-        padding: 4rem 0 1rem 3rem;
+        padding: 4rem 0 1.25rem 4.5rem;
       }
     }
 
@@ -62,20 +62,32 @@ export const ProductContainer = styled.article `
       padding-left: 2rem;
 
       @media (min-width: ${breakpoints.md}px) {
-        padding-left: 3rem;
+        padding-left: 4.5rem;
+      }
+    }
+
+    &__column-left {
+      background: #fff;
+
+      @media (min-width: ${breakpoints.md}px) {
+        max-width: 51.5%;
       }
     }
 
     &__column-right {
-        @media (min-width: ${breakpoints.md}px) {
-          align-items: center;
-          border-left: 1px solid ${theme.borderColor};
-          display: flex;
-          flex-shrink: 0;
-          justify-content: center;
-          padding: 2rem 4rem;
+      @media (min-width: ${breakpoints.md}px) {
+        align-items: center;
+        border-left: 1px solid ${theme.borderColor};
+        display: flex;
+        flex-grow: 1;
+        justify-content: center;
+        position: relative;
+
+        img {
+          width: 70%;
         }
       }
+    }
   }
 
   .react-tabs {
@@ -83,15 +95,16 @@ export const ProductContainer = styled.article `
       padding: 1rem 2rem;
 
       @media (min-width: ${breakpoints.md}px) {
-        padding: 1rem 3rem;
+        padding: 1rem 4.5rem 1.9rem;
       }
     }
 
     &__tab-list {
       padding-left: 2rem;
+      margin: 1.4rem 0 1rem 0;
 
       @media (min-width: ${breakpoints.md}px) {
-        padding-left: 3rem;
+        padding-left: 4.5rem;
       }
     }
   }

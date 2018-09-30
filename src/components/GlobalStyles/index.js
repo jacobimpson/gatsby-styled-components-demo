@@ -12,8 +12,8 @@ export default styled.div`
     margin: 0;
     color: ${theme.heading};
     font-size: ${fontSizes.xl}rem;
-    margin-bottom: 0.5rem;
-    letter-spacing: 0.5px;
+    margin-bottom: 0.65rem;
+    letter-spacing: 0.7px;
     font-weight: 600;
   }
 
@@ -22,6 +22,7 @@ export default styled.div`
     color: ${theme.headingLight};
     font-size: ${fontSizes.xs}rem;
     font-weight: 600;
+    letter-spacing: -0.5px;
   }
 
   h3 {

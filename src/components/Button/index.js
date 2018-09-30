@@ -39,8 +39,8 @@ const Button = styled.button`
   font-size: ${fontSizes.xxs}rem;
   font-weight: 600;
   letter-spacing: 0.5px;
-  min-width: 15rem;
-  padding: 1rem 2rem;
+  min-width: 14.5rem;
+  padding: 1.35rem 2rem;
   text-transform: uppercase;
   transition: all ${theme.transitionDefault};
   display: flex;

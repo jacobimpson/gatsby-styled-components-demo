@@ -40,7 +40,7 @@ class IndexPage extends Component {
       <Layout>
         <ProductBody>
           <ProductContainer>
-            <div>
+            <div class="product__column-left">
               <div className="product__back">
                 <BackButton href="/" label="All products" />
               </div>
@@ -94,7 +94,6 @@ class IndexPage extends Component {
                       NotificationManager.info('No cart in this demo, sorry!');
                       return;
                     }
-
                     this.setState({ addingToCart: true });
                     setTimeout(
                       () =>

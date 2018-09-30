@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { fontSizes, colors } from '../../constants';
 
 const ColorSelectWrapper = styled.div`
-  width: 10rem;
+  width: 8.5rem;
 `;
 
 const Label = styled.label`
