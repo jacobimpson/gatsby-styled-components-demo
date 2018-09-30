@@ -28,11 +28,33 @@ class IndexPage extends Component {
     };
   }
 
+  handleAddToCartClick() {
+    if (this.state.addedToCart) {
+      NotificationManager.info('No cart in this demo, sorry!');
+      return;
+    }
+
+    this.setState({ addingToCart: true }, () => {
+      setTimeout(
+        () =>
+          this.setState(
+            {
+              buttonText: 'View Cart',
+              addingToCart: false,
+              addedToCart: true,
+            },
+            () => NotificationManager.success('Added to cart')
+          ),
+        2000
+      );
+    });
+  }
+
   render() {
     const { title, subtitle, tabs, price, colors } = product;
     const { selectedColor } = this.state;
     const activeImageSrc = withPrefix(selectedColor.image);
-    const activeImageAlt = `${product.title} ${
+    const activeImageAlt = `Photograph of ${product.title} ${
       selectedColor.label
     } Color Variation`;
 
@@ -40,7 +62,7 @@ class IndexPage extends Component {
       <Layout>
         <ProductBody>
           <ProductContainer>
-            <div class="product__column-left">
+            <div className="product__column-left">
               <div className="product__back">
                 <BackButton href="/" label="All products" />
               </div>
@@ -83,37 +105,23 @@ class IndexPage extends Component {
                   onChange={selectedColor => this.setState({ selectedColor })}
                 />
               </div>
-              <MediaQuery maxWidth={`${breakpoints.md - 1}px`}>
-                <img src={activeImageSrc} alt={activeImageAlt} />
+              <MediaQuery maxWidth={`${breakpoints.desktop - 1}px`}>
+                <img
+                  className="product__image-mobile"
+                  src={activeImageSrc}
+                  alt={activeImageAlt}
+                />
               </MediaQuery>
               <div className="product__add-to-cart">
                 <Button
                   isLoading={this.state.addingToCart}
-                  onClick={() => {
-                    if (this.state.addedToCart) {
-                      NotificationManager.info('No cart in this demo, sorry!');
-                      return;
-                    }
-                    this.setState({ addingToCart: true });
-                    setTimeout(
-                      () =>
-                        this.setState(
-                          {
-                            buttonText: 'View Cart',
-                            addingToCart: false,
-                            addedToCart: true,
-                          },
-                          () => NotificationManager.success('Added to cart')
-                        ),
-                      2000
-                    );
-                  }}
+                  onClick={this.handleAddToCartClick.bind(this)}
                 >
                   {this.state.addingToCart ? 'Loading' : this.state.buttonText}
                 </Button>
               </div>
             </div>
-            <MediaQuery minWidth={`${breakpoints.md}px`}>
+            <MediaQuery minWidth={`${breakpoints.desktop}px`}>
               <div className="product__column-right">
                 <img src={activeImageSrc} alt={activeImageAlt} />
               </div>

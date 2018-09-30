@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { theme, fontSizes } from '../../constants';
+import { theme, fontSizes, breakpoints } from '../../constants';
 
 const IconLoading = () => (
   <svg
@@ -39,7 +39,6 @@ const Button = styled.button`
   font-size: ${fontSizes.xxs}rem;
   font-weight: 600;
   letter-spacing: 0.5px;
-  min-width: 14.5rem;
   padding: 1.35rem 2rem;
   text-transform: uppercase;
   transition: all ${theme.transitionDefault};
@@ -47,6 +46,12 @@ const Button = styled.button`
   justify-content: center;
   align-items: center;
   position: relative;
+  width: 100%;
+
+  @media (min-width: ${breakpoints.desktop}px) {
+    width: auto;
+    min-width: 14.5rem;
+  }
 
   svg {
     stroke: #fff;

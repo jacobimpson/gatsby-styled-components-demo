@@ -1,10 +1,14 @@
 import React from 'react';
 import Select from 'react-select';
 import styled from 'styled-components';
-import { fontSizes, colors } from '../../constants';
+import { fontSizes, colors, breakpoints } from '../../constants';
 
 const ColorSelectWrapper = styled.div`
-  width: 8.5rem;
+  width: 100%;
+
+  @media (min-width: ${breakpoints.desktop}px) {
+    width: 8.5rem;
+  }
 `;
 
 const Label = styled.label`

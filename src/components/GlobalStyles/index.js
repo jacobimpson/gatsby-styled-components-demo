@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { fontSizes, theme } from '../../constants';
+import { fontSizes, theme, breakpoints } from '../../constants';
 import './style.css';
 
 export default styled.div`
@@ -11,10 +11,14 @@ export default styled.div`
   h1 {
     margin: 0;
     color: ${theme.heading};
-    font-size: ${fontSizes.xl}rem;
     margin-bottom: 0.65rem;
     letter-spacing: 0.7px;
     font-weight: 600;
+    font-size: ${fontSizes.lg}rem;
+
+    @media (min-width: ${breakpoints.desktop}px) {
+      font-size: ${fontSizes.xl}rem;
+    }
   }
 
   h2 {

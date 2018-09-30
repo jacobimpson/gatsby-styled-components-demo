@@ -22,10 +22,7 @@ export const theme = {
 }
 
 export const breakpoints = {
-    xs: 480,
-    sm: 768,
-    md: 1024,
-    lg: 1256,
+    desktop: 1024,
 }
 
 export const fontSizes = {
