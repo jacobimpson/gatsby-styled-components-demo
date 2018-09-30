@@ -1,6 +1,6 @@
 import { Tabs } from 'react-tabs';
 import styled from 'styled-components';
-import { fontSizes, theme, breakpoints } from '../../constants';
+import { fontSizes, theme, colors } from '../../constants';
 
 export default styled(Tabs)`
   .react-tabs {
@@ -9,36 +9,40 @@ export default styled(Tabs)`
       display: flex;
       list-style-type: none;
       border-bottom: 1px solid ${theme.borderColor};
-      padding-left: 2rem;
-
-      @media (min-width: ${breakpoints.md}px) {
-        padding-left: 3rem;
-      }
     }
 
     &__tab {
-      padding: 1rem 0.5rem;
-      margin: 0 2rem 0 0;
+      color: ${colors.grayLight};
       cursor: pointer;
       font-size: ${fontSizes.xxs}rem;
+      font-weight: 600;
+      margin: 0 2rem 0 0;
+      padding: 1rem 0.875rem 0.7rem;
       text-transform: uppercase;
-      font-weight: 500;
+      transition: color ${theme.transitionDefault};
+      border-bottom: 0.2rem solid transparent;
+
+      &:hover,
+      &:focus {
+        color: ${colors.grayDefault};
+      }
 
       &--selected {
         border-bottom: 0.2rem solid ${theme.primary};
+        color: ${colors.grayDefault};
       }
     }
 
     &__tab-panel {
       display: none;
-      padding: 1rem 2rem;
-
-      @media (min-width: ${breakpoints.md}px) {
-        padding: 1rem 3rem;
-      }
+      padding-bottom: 2.1rem;
 
       &--selected {
         display: block;
+
+        *:last-child {
+          margin-bottom: 0;
+        }
       }
     }
   }

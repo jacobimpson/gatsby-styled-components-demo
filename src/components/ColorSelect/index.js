@@ -1,15 +1,10 @@
 import React from 'react';
 import Select from 'react-select';
 import styled from 'styled-components';
-import { fontSizes, breakpoints } from '../../constants';
+import { fontSizes, colors } from '../../constants';
 
 const ColorSelectWrapper = styled.div`
-  padding: 3rem 0 1rem 2rem;
-  width: 12rem;
-
-  @media (min-width: ${breakpoints.md}px) {
-    padding: 3rem 0 1rem 3rem;
-  }
+  width: 10rem;
 `;
 
 const Label = styled.label`
@@ -18,10 +13,49 @@ const Label = styled.label`
   display: block;
 
   > span {
-    font-weight: 500;
+    font-weight: 600;
     font-size: ${fontSizes.xxs}rem;
+    color: ${colors.grayDefault};
     margin-bottom: 0.5rem;
     display: block;
+  }
+
+  .react-select {
+    * {
+      color: ${colors.grayDefault};
+    }
+
+    &__control {
+      background: #fff;
+    }
+
+    &__value-container {
+      font-weight: 600;
+      font-size: ${fontSizes.xxs}rem;
+    }
+
+    &__option {
+      font-weight: 400;
+      font-size: ${fontSizes.xxs}rem;
+
+      &:hover,
+      &:focus {
+        background: ${colors.grayLighter};
+      }
+
+      &--is-focused,
+      &--is-selected {
+        background: #fff;
+      }
+
+      &--is-selected {
+        font-weight: 600;
+      }
+    }
+
+    &__indicator-separator {
+      display: none;
+    }
   }
 `;
 
@@ -29,13 +63,16 @@ export default ({ options, value, onChange, defaultValue }) => {
   return (
     <ColorSelectWrapper>
       <Label htmlFor="color-select">
-        <span> Colors </span>
+        <span>Colors</span>
         <Select
-          id="color-select"
+          className="react-select"
+          classNamePrefix="react-select"
           defaultValue={defaultValue}
-          value={value}
+          id="color-select"
+          isSearchable={false}
           onChange={onChange}
           options={options}
+          value={value}
         />
       </Label>
     </ColorSelectWrapper>

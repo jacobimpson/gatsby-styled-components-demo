@@ -2,9 +2,11 @@ import { withPrefix } from 'gatsby';
 import React, { Component } from 'react';
 import MediaQuery from 'react-responsive';
 import { Tab, TabList, TabPanel } from 'react-tabs';
+import BackButton from '../components/BackButton';
 import Button from '../components/Button';
 import ColorSelect from '../components/ColorSelect';
-import { Body, Layout, ProductContainer } from '../components/Layout';
+import { Layout } from '../components/Layout';
+import { ProductBody, ProductContainer } from '../components/Layout/Product';
 import Price, { PriceWrapper } from '../components/Price';
 import ProductTabs from '../components/ProductTabs';
 import { breakpoints, product } from '../constants';
@@ -31,13 +33,13 @@ class IndexPage extends Component {
 
     return (
       <Layout>
-        <Body>
+        <ProductBody>
           <ProductContainer>
-            <div className="column column--left">
-              <div className="back">
-                <a href="/">All Products</a>
+            <div>
+              <div className="product__back">
+                <BackButton href="/" label="All products" />
               </div>
-              <div className="title-wrapper">
+              <div className="product__title-wrapper">
                 <h1>{title}</h1>
                 {subtitle && <h2>{subtitle}</h2>}
               </div>
@@ -58,7 +60,7 @@ class IndexPage extends Component {
                   ))}
                 </ProductTabs>
               )}
-              <PriceWrapper>
+              <PriceWrapper className="product__price-wrapper">
                 {price.sale && price.sale < price.regular ? (
                   <>
                     <Price value={price.sale} />
@@ -68,17 +70,20 @@ class IndexPage extends Component {
                   <Price value={price.regular} />
                 )}
               </PriceWrapper>
-              <ColorSelect
-                options={colors}
-                defaultValue={colors[0]}
-                value={this.state.selectedColor}
-                onChange={selectedColor => this.setState({ selectedColor })}
-              />
+              <div className="product__color-select">
+                <ColorSelect
+                  options={colors}
+                  defaultValue={colors[0]}
+                  value={this.state.selectedColor}
+                  onChange={selectedColor => this.setState({ selectedColor })}
+                />
+              </div>
               <MediaQuery maxWidth={`${breakpoints.md - 1}px`}>
                 <img src={activeImageSrc} alt={activeImageAlt} />
               </MediaQuery>
-              <div className="add-to-cart">
+              <div className="product__add-to-cart">
                 <Button
+                  isLoading={this.state.addingToCart}
                   onClick={() => {
                     if (this.state.addedToCart) {
                       alert(
@@ -101,19 +106,17 @@ class IndexPage extends Component {
                     );
                   }}
                 >
-                  {this.state.addingToCart
-                    ? 'Loading...'
-                    : this.state.buttonText}
+                  {this.state.addingToCart ? 'Loading' : this.state.buttonText}
                 </Button>
               </div>
             </div>
             <MediaQuery minWidth={`${breakpoints.md}px`}>
-              <div className="column column--right">
+              <div className="product__column-right">
                 <img src={activeImageSrc} alt={activeImageAlt} />
               </div>
             </MediaQuery>
           </ProductContainer>
-        </Body>
+        </ProductBody>
       </Layout>
     );
   }

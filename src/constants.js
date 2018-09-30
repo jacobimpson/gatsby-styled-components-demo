@@ -4,33 +4,37 @@ export const colors = {
     grayDefault: '#4c4c4c',
     grayDark: '#494949',
     blue: '#2186fa',
+    blueDark: '#1973da',
     green: '#78C372'
 }
 
 export const theme = {
     primary: colors.blue,
+    primaryDark: colors.blueDark,
     success: colors.green,
     heading: colors.grayDark,
     headingLight: colors.grayLight,
     paragraph: colors.grayDefault,
     bodyColor: colors.grayLighter,
-    borderColor: colors.grayLighter
+    borderColor: colors.grayLighter,
+    transitionDefault: '620ms cubic-bezier(0.215, 0.61, 0.355, 1)',
+    transitionFast: '220ms cubic-bezier(0.215, 0.61, 0.355, 1)'
 }
 
 export const breakpoints = {
     xs: 480,
     sm: 768,
     md: 1024,
-    lg: 1280,
+    lg: 1100,
 }
 
 export const fontSizes = {
-    xxs: 0.9,
-    xs: 1.0,
-    sm: 1.0,
-    md: 1.0,
-    lg: 2.2,
-    xl: 2.2,
+    xxs: 0.8,
+    xs: 0.875,
+    sm: 0.9,
+    md: 0.95,
+    lg: 2.1,
+    xl: 2.25,
 };
 
 export const product = {
@@ -56,7 +60,10 @@ export const product = {
             content: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Explicabo ex voluptatum adipisci dicta, libero laborum quisquam error.
                 Saepe iste officia tempora distinctio, atque, suscipit mollitia ab
-                perferendis debitis blanditiis quas.
+                perferendis debitis blanditiis quas. Llibero laborum quisquam error.
+                Saepe iste officia tempora distinctio, atque, suscipit mollitia ab
+                perferendis debitis blanditiis quas. Llibero laborum quisquam error.
+                Saepe iste officia tempora distinctio.
             `,
         },
         {
@@ -64,7 +71,9 @@ export const product = {
             content: `Vero autem ea beatae, libero perspiciatis, aperiam fuga ratione
                 inventore nemo nam maxime explicabo, minima impedit sit laudantium
                 voluptatem reiciendis accusamus dolores! minima impedit sit laudantium
-                voluptatem reiciendis accusamus dolores!
+                voluptatem reiciendis accusamus dolores! Llibero laborum quisquam error.
+                Saepe iste officia tempora distinctio, atque, suscipit mollitia ab
+                perferendis debitis blanditiis quas.
             `,
         },
     ],
