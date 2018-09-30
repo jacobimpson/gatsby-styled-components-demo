@@ -8,6 +8,8 @@ This project demonstrates a simple application using React, Gatsby, and styled-c
   - An accessible ARIA compliant tab component.
 - `react-select`
   - An accessible ARIA compliant select component.
+- `react-notifications`
+  - Some simple, pretty notifications.
 - `styled-components`
   - A CSS in JS solution that tightly couples your styles to your components, allowing for enhanced reusability and scalability.
 
