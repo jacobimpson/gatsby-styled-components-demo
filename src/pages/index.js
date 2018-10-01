@@ -67,10 +67,12 @@ class IndexPage extends Component {
               <div className="product__back">
                 <BackButton href="/" label="All products" />
               </div>
+
               <div className="product__title-wrapper">
                 <h1>{title}</h1>
                 {subtitle && <h2>{subtitle}</h2>}
               </div>
+
               {tabs.length && (
                 <ProductTabs
                   selectedIndex={this.state.tabIndex}
@@ -88,6 +90,7 @@ class IndexPage extends Component {
                   ))}
                 </ProductTabs>
               )}
+
               <PriceWrapper className="product__price-wrapper">
                 {price.sale && price.sale < price.regular ? (
                   <>
@@ -98,6 +101,7 @@ class IndexPage extends Component {
                   <Price value={price.regular} />
                 )}
               </PriceWrapper>
+
               <div className="product__color-select">
                 <ColorSelect
                   options={colors}
@@ -106,6 +110,7 @@ class IndexPage extends Component {
                   onChange={selectedColor => this.setState({ selectedColor })}
                 />
               </div>
+
               <MediaQuery maxWidth={`${breakpoints.desktop - 1}px`}>
                 <img
                   className="product__image-mobile"
@@ -113,6 +118,7 @@ class IndexPage extends Component {
                   alt={activeImageAlt}
                 />
               </MediaQuery>
+
               <div className="product__add-to-cart">
                 <Button
                   isLoading={this.state.addingToCart}
@@ -122,6 +128,7 @@ class IndexPage extends Component {
                 </Button>
               </div>
             </div>
+
             <MediaQuery minWidth={`${breakpoints.desktop}px`}>
               <div className="product__column-right">
                 <img src={activeImageSrc} alt={activeImageAlt} />

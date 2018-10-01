@@ -13,10 +13,10 @@ export default styled(Tabs)`
     &__tab {
       color: ${colors.grayLight};
       cursor: pointer;
-      font-size: ${fontSizes.xxs}rem;
+      font-size: ${fontSizes.xxs * 0.9}rem;
       font-weight: 600;
       margin: 0 2rem 0 0;
-      padding: 1rem 0.55rem 0.7rem;
+      padding: 1.1rem 0.5rem 0.7rem 0.5rem;
       text-transform: uppercase;
       transition: color ${theme.transitionDefault};
       border-bottom: 0.2rem solid transparent;

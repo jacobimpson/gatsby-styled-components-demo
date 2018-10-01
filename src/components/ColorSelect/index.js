@@ -57,6 +57,14 @@ const Label = styled.label`
       }
     }
 
+    &__indicator {
+      opacity: 0.6;
+
+      svg path {
+        fill: ${colors.grayDefault};
+      }
+    }
+
     &__indicator-separator {
       display: none;
     }

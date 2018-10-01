@@ -60,7 +60,7 @@ export const product = {
                 perferendis debitis blanditiis quas. Llibero laborum quisquam error.
                 Saepe iste officia tempora distinctio, atque, suscipit mollitia ab
                 perferendis debitis blanditiis quas. Llibero laborum quisquam error.
-                Saepe iste officia tempora distinctio.
+                Saepe iste.
             `,
         },
         {

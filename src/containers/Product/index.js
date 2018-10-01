@@ -18,6 +18,8 @@ export const ProductContainer = styled.article`
   max-width: 100%;
 
   @media (min-width: ${breakpoints.desktop}px) {
+    overflow: hidden;
+    border-radius: 0.3rem;
     width: 1256px;
     display: flex;
   }
@@ -27,7 +29,7 @@ export const ProductContainer = styled.article`
       padding: 2rem 2rem;
 
       @media (min-width: ${breakpoints.desktop}px) {
-        padding: 2rem 4.5rem 2.3rem;
+        padding: 2rem 4.5rem 2.45rem;
         margin-left: -0.2rem;
       }
     }
@@ -77,10 +79,10 @@ export const ProductContainer = styled.article`
     }
 
     &__column-left {
-      background: #fff;
+      background: #ff;
 
       @media (min-width: ${breakpoints.desktop}px) {
-        max-width: 51.5%;
+        width: 51.5%;
       }
     }
 
@@ -105,7 +107,7 @@ export const ProductContainer = styled.article`
       padding: 1rem 2rem;
 
       @media (min-width: ${breakpoints.desktop}px) {
-        padding: 1rem 4.5rem 1.9rem;
+        padding: 1rem 4.5rem 1.85rem;
       }
     }
 

@@ -28,7 +28,7 @@ const BackButton = styled.a`
 
   .label {
     font-weight:: 400;
-    padding-left: 0.65rem;
+    padding-left: 0.55rem;
   }
 `;
 

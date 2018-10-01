@@ -12,7 +12,7 @@ export default styled.div`
     margin: 0;
     color: ${theme.heading};
     margin-bottom: 0.65rem;
-    letter-spacing: 0.7px;
+    letter-spacing: -0.7px;
     font-weight: 600;
     font-size: ${fontSizes.xl * 0.9}rem;
 
@@ -24,9 +24,8 @@ export default styled.div`
   h2 {
     margin: 0;
     color: ${theme.headingLight};
-    font-size: ${fontSizes.xs}rem;
+    font-size: ${fontSizes.xxs * 0.95}rem;
     font-weight: 600;
-    letter-spacing: -0.5px;
   }
 
   h3 {
@@ -37,7 +36,7 @@ export default styled.div`
 
   p {
     color: ${theme.paragraph};
-    font-size: ${fontSizes.md}rem;
-    line-height: 1.5;
+    font-size: ${fontSizes.xxs}rem;
+    line-height: 1.85;
   }
 `;
